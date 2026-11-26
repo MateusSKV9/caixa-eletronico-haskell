@@ -8,7 +8,17 @@ saldo estado = do
   return estado
 
 deposito :: Estado -> IO Estado
-deposito = undefined
+deposito estado = do
+  putStr "Digite o valor para depósito: "
+  valor <- readLn :: IO Double
+  if valor < 0
+    then do
+      putStrLn "Valor inválido! O valor do depósito não pode ser negativo."
+      return estado
+    else do
+      let novoEstado = estado + valor
+      putStrLn ("Depósito realizado com sucesso. Novo saldo: R$ " ++ show novoEstado)
+      return novoEstado
 
 saque :: Estado -> IO Estado
 saque = undefined
