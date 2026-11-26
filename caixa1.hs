@@ -1,9 +1,13 @@
 module Main where
 
+import System.IO
+
 main :: IO ()
 main = do
-    putStrLn "================================"
-    putStrLn "    Simulacao de Caixa Automatico"
-    putStrLn "================================"
-    putStrLn "Ambiente Haskell funcionando!"
-  
+  hSetBuffering stdout NoBuffering
+
+  putStrLn "=================================="
+  putStrLn "       CAIXA ELETRONICO"
+  putStrLn "=================================="
+
+  putStrLn "Bem-vindo ao caixa eletronico!"
